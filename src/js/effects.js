@@ -214,7 +214,7 @@ s.effects = {
             }
         }
     },
-    coverflow: {
+    coverflow: {  // SAR : fix the symetry problem
         setTranslate: function () {
             var transform = s.translate;
             var center = s.isHorizontal() ? -transform + s.width / 2 : -transform + s.height / 2;
@@ -225,7 +225,7 @@ s.effects = {
                 var slide = s.slides.eq(i);
                 var slideSize = s.slidesSizesGrid[i];
                 var slideOffset = slide[0].swiperSlideOffset;
-                var offsetMultiplier = (center - slideOffset - slideSize / 2) / slideSize * s.params.coverflow.modifier;
+                var offsetMultiplier = 1 * (center - slideOffset - slideSize / 2) / slideSize * s.params.coverflow.modifier;
 
                 var rotateY = s.isHorizontal() ? rotate * offsetMultiplier : 0;
                 var rotateX = s.isHorizontal() ? 0 : rotate * offsetMultiplier;
